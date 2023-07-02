@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Mulish", sans-serif;
+}
+
+.one {
+  width: 100vw;
+  height: 92vh;
+  background: url("../img/back/1.png") center center no-repeat;
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+header nav ul li {
+  margin: 0 25px;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+header .icon {
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+}
+header .icon a {
+  color: #F0C260;
+  text-decoration: none;
+}
+
+.target {
+  width: 100vw;
+  height: 60vh;
+  background: #1E2224;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delivery {
+  width: 100vw;
+  height: 392px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: url("../img/back/2.png") center center no-repeat;
+}
+.delivery .delivery-right {
+  margin-right: 5%;
+}
+.delivery .delivery-right > button {
+  width: 260px;
+  height: 50px;
+  border-radius: 25px;
+  border: 2px solid #1E2224;
+  background: none;
+  font-size: 17px;
+}
+.delivery .delivery-left {
+  margin-left: 5%;
+}
+.delivery .delivery-left h2 {
+  font-size: 35px;
+}
+.delivery .delivery-left p {
+  margin-top: 30px;
+}
+
+.promotion {
+  width: 100vw;
+  height: 830px;
+  background: url("../img/back/3.svg") center center no-repeat;
+}
+
+.map {
+  width: 100vw;
+  height: 500px;
+  overflow: hiiden;
+}
+
+footer {
+  width: 100%;
+  height: 642px;
+  background-color: #1E2224;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .up {
+  display: flex;
+  justify-content: center;
+}
+footer .center {
+  margin: 80px 0;
+}
+footer .center nav ul {
+  list-style: none;
+  display: flex;
+}
+footer .center nav ul li {
+  margin: 0 25px;
+}
+footer .center nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+footer .down {
+  text-align: center;
+}
+footer .down p {
+  margin-top: 20px;
+  color: #fff;
+}
+
+.head-product {
+  width: 100vw;
+  height: 1500px;
+  background: url("../img/back/4.png") center center no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head-product .head-product-header {
+  text-align: center;
+}
+.head-product .head-product-header h1 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 400;
+}
+.head-product .head-product-content {
+  height: 1100px;
+  margin-top: 80px;
+  overflow: auto;
+}
+.head-product .head-product-content .head-product-content-block {
+  width: 50vw;
+  margin: 2% 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.head-product .head-product-content .head-product-content-block img {
+  width: 200px;
+}
+.head-product .head-product-content .head-product-content-block h3 {
+  margin: 10px 0;
+  color: #fff;
+}
+.head-product .head-product-content .head-product-content-block p {
+  margin-top: 10px 0;
+  color: gray;
+}
+.head-product .head-product-content .head-product-content-block button {
+  background: #F0C260;
+  color: #fff;
+  margin-top: 20px;
+  border: none;
+  font-size: 17px;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+.head-product .head-product-content .head-product-content-block a {
+  text-decoration: none;
+  color: #F0C260;
+}
+
+.countsss {
+  margin-left: 130px;
+  margin-top: -30px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1E2224;
+  background: #F0C260;
+}
+
+.counts {
+  width: 300px;
+  margin-top: 50px;
+}
+.counts p {
+  color: #fff;
+  margin-top: 10px;
+}
+.counts span {
+  color: #F0C260;
+}
+.counts button {
+  margin-top: 20px;
+  padding: 15px 45px;
+  background: #F0C260;
+  color: #1E2224;
+  border-radius: 10px;
+  border: none;
+  font-size: 17px;
+}
+
+.error {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.register-auth p {
+  text-align: center;
+  color: #F0C260;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal-container,
+.modal-container2 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s visibility ease-in, opacity 0.3s ease-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal-container.show,
+.modal-container2.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal,
+.modal2 {
+  width: 412px;
+  padding: 40px 0;
+  border-radius: 8px;
+  background-color: #1E2224;
+  box-shadow: 0 2px 15px rgba(34, 34, 53, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal label,
+.modal2 label {
+  color: #fff;
+}
+.modal input,
+.modal2 input {
+  margin-bottom: 30px;
+  width: 315px;
+  height: 50px;
+  background: #4D4C4C;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 0 10px;
+}
+.modal button,
+.modal2 button {
+  width: 335px;
+  height: 50px;
+  background: #F0C260;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  color: #1E2224;
+}
+
+.admins,
+.sql-zaprosi-section {
+  width: 100%;
+  padding: 10% 0;
+  background: #1E2224;
+  color: #fff;
+}
+.admins a,
+.sql-zaprosi-section a {
+  color: #F0C260;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.admins .blocksss,
+.sql-zaprosi-section .blocksss {
+  width: 90%;
+  margin-left: 5%;
+}
+.admins .blocksss .df,
+.sql-zaprosi-section .blocksss .df {
+  display: flex;
+  align-items: center;
+}
+.admins .blocksss .df img,
+.sql-zaprosi-section .blocksss .df img {
+  width: 200px;
+}
+.admins .blocksss .df .texts,
+.sql-zaprosi-section .blocksss .df .texts {
+  margin-left: 30px;
+}
+.admins .blocksss .df .texts span,
+.sql-zaprosi-section .blocksss .df .texts span {
+  font-size: 13px;
+  color: #808080;
+}
+.admins ul,
+.sql-zaprosi-section ul {
+  list-style: none;
+}
+.admins h2,
+.sql-zaprosi-section h2 {
+  margin: 25px 0;
+}
+.admins p,
+.sql-zaprosi-section p {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.admins input,
+.admins select,
+.admins label,
+.sql-zaprosi-section input,
+.sql-zaprosi-section select,
+.sql-zaprosi-section label {
+  width: 315px;
+  height: 50px;
+  border-radius: 6px;
+  outline: none;
+  padding-left: 15px;
+  background-color: #4D4C4C;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+}
+.admins label,
+.sql-zaprosi-section label {
+  padding: 10px 100px;
+}
+.admins tr,
+.admins th,
+.admins td,
+.sql-zaprosi-section tr,
+.sql-zaprosi-section th,
+.sql-zaprosi-section td {
+  padding: 5px;
+  border: 1px solid #808080;
+}
+.admins .flexs,
+.sql-zaprosi-section .flexs {
+  display: flex;
+  justify-content: center;
+}
+.admins .dobaxit_danne,
+.sql-zaprosi-section .dobaxit_danne {
+  padding: 0 50px;
+}
+
+.sql-zaprosi {
+  width: 90%;
+  margin-left: 5%;
+}
+.sql-zaprosi p {
+  margin-top: 60px;
+  margin-bottom: 25px;
+}
+.sql-zaprosi table,
+.sql-zaprosi tr,
+.sql-zaprosi th,
+.sql-zaprosi td {
+  padding: 10px;
+  border: 1px solid #808080;
+}/*# sourceMappingURL=style.css.map */
