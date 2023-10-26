@@ -8,6 +8,7 @@ if (isset($_SESSION['login_user'])) {
     $user_check = $_SESSION['login_user'];
     $query = mysqli_query($conn, "SELECT * FROM users WHERE email = '$user_check'");
     $rows = mysqli_fetch_array($query);
+    $id_user = $rows['id_user'];
     $surname = $rows['surname'];
     $names = $rows['name'];
     $status = $rows['admin'];
@@ -29,15 +30,17 @@ if (isset($_SESSION['login_user'])) {
 
     <section class="blocksss">
         <div class="df">
+            <div>
             <div class="img">
                 <img src="../img/elements/2.png" alt="">
             </div>
             <div class="texts">
                 <p><?=$surname;?> <?=$names;?> - <span><?=$admin;?></span></p>
                 <p><span>Номер телефона: </span><?=$number;?></p>
-                <p><span>Почта: </span><?=$email;?></p>
+                <p><span>Почта: </span><?=$email;?> - <span><?=$conf;?></span></p>
                 <p><span>Дата рождения: </span><?=$date_birth;?></p>
-                
+
+            </div>
             </div>
         </div>
 </section>

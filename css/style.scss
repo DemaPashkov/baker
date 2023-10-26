@@ -5,13 +5,18 @@
     font-family: 'Mulish', sans-serif;
 }
 $white: #fff;
-$black: #1E2224;
-$yellow: #F0C260;
+$black: #223138;
+$green: #5CED84;
 $gray: gray;
 .one{
     width: 100vw;
     height: 92vh;
     background: url('../img/back/1.png')center center no-repeat;
+}
+.one-contact{
+    width: 100vw;
+    height: 92vh;
+    background: url('../img/back/7.svg')center center no-repeat;
 }
 header{
     width: 100%;
@@ -38,7 +43,7 @@ header{
         display: flex;
         align-items: center;
         a{
-            color: $yellow;
+            color: $green;
             text-decoration: none;
         }
     }
@@ -79,11 +84,27 @@ header{
         }
     }
 }
-.promotion{
-    width: 100vw;
-    height: 830px;
-    background: url('../img/back/3.svg') center center no-repeat;
-}
+
+    
+    .slider {
+        width: 100vw;
+        height: 830px;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .slider img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        transition: opacity 0.5s ease-in-out;
+      }
+      
+      .slider img:not(:first-child) {
+        opacity: 0;
+      }
+
 .map{
     width: 100vw;
     height: 500px;
@@ -127,12 +148,17 @@ footer{
     }
 }
 
+.more-photos{
+    img{
+        width: 50px;
+    }
+}
 
 // product.php
 
 .head-product{
     width: 100vw;
-    height: 1500px;
+    height: 800px;
     background: url('../img/back/4.png') center center no-repeat;
     display: flex;
     justify-content: center;
@@ -146,33 +172,71 @@ footer{
         }
     }
     .head-product-content{
-  
-        height: 1100px;
+        width: 90vw;
+        height: 400px;
         margin-top: 80px;
+        display: flex;
         overflow: auto;
-        .head-product-content-block{
-           
-            width: 50vw;
-            margin: 2% 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 20px;
+        .head-product-content-walp{
+            margin-left: 27.5%;
+            width:55%;
+            // border: 1px solid white;
+            padding: 30px;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            // background-color: $white;
+            border-radius: 6px;
+            .head-product-content-walp-left{
+                img{
+                    width: 350px;
+                }
+            }
+            .head-product-content-walp-right{
+                padding: 20px;
+                h2{
+                    color: $white
+                }
+                p{
+                    max-width: 300px;
+                    margin: 10px 0;
+                    font-weight: 300;
+                    color: $white;
+                    font-size: 17px;
+
+                }
+                span{
+                    color: $gray;
+                }
+                .price{
+                    color: $green;
+                }
+            }
+            
+        }
+        .head-product-content-block{
+            margin: 20px;
+            // background-color: $white;
+            border-radius: 6px;
+            // display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 20px;
             img{
                 width: 200px;
+                
             }
             h3{
+                font-size: 17px;
                 margin: 10px 0;
                 color: $white;
             }
             p{
                 margin-top: 10px 0;
-                color: $gray;
+                color: $green;
             }
             button{
-                background: $yellow;
+                background: $green;
                 color: $white;
                 margin-top: 20px;
                 border: none;
@@ -182,7 +246,7 @@ footer{
             }
             a{
                 text-decoration: none;
-                color: $yellow;
+                color: $green;
             }
             
         }
@@ -199,7 +263,7 @@ footer{
     justify-content: center;
     align-items: center;
     color: $black;
-    background: $yellow;
+    background: $green;
 }
 .counts{
     width: 300px;
@@ -209,14 +273,14 @@ footer{
         margin-top: 10px;
     }
     span{
-        color: $yellow;
+        color: $green;
     }
     button{
         margin-top: 20px;
         padding: 15px 45px;
-        background: $yellow;
+        background: $green;
         color:$black;
-        border-radius: 10px;
+        border-radius: 6px;
         border:none;
         font-size: 17px;
     }
@@ -230,7 +294,7 @@ footer{
 .register-auth{
     p{
         text-align: center;
-        color: $yellow;
+        color: $green;
         cursor: pointer;
     }
 }
@@ -261,7 +325,7 @@ footer{
   .modal2 {
     width: 412px;
     padding: 40px 0;
-    border-radius: 8px;
+    border-radius: 6px;
     background-color: $black;
     box-shadow: 0 2px 15px rgba(34, 34, 53, 0.1);
     display: flex;
@@ -284,7 +348,7 @@ footer{
     button{
         width: 335px;
         height: 50px;
-        background: $yellow;
+        background: $green;
         outline: none;
         border: none;
         border-radius: 6px;
@@ -299,7 +363,7 @@ footer{
     background: $black;
     color: $white;
     a{
-        color: $yellow;
+        color: $green;
         margin-left: 10px;
         margin-right: 10px;
         text-decoration: none;
@@ -309,6 +373,7 @@ footer{
         margin-left: 5%;
         .df{
             display: flex;
+            justify-content: center;
             align-items: center;
             img{
                 width: 200px;

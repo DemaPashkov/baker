@@ -29,6 +29,7 @@ if (isset($_SESSION['login_user'])) {
 
     <section class="blocksss">
         <div class="df">
+            <div>
             <div class="img">
                 <img src="../img/elements/2.png" alt="">
             </div>
@@ -38,6 +39,7 @@ if (isset($_SESSION['login_user'])) {
                 <p><span>Почта: </span><?=$email;?></p>
                 <p><span>Дата рождения: </span><?=$date_birth;?></p>
                 
+            </div>
             </div>
         </div>
 </section>

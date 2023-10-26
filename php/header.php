@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ПаПик</title>
+    <title>BISTROY</title>
     <link rel="stylesheet" href="../css/style.css">
+    <!-- <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script> -->
+
 </head>
 <body>
     <header>
@@ -14,49 +16,38 @@
         <nav>
             <ul>
                 <li><a href="../index.php">Главная</a></li>
-                <li><a href="../product.php">Продукция</a></li>
+                <li><a href="../product.php">Наши услуги</a></li>
                 <li><a href="../contact.php">Контакты</a></li>
-                <li><a href="../cart.php">Коризина</a></li>
-            </ul>
-        </nav>
-        <div class="icon">
-        <?php 
-        session_start();
+                <?php 
         require_once('bd.php');
+        session_start();
                    if (isset($_SESSION['login_user'] )) {
                     $user_check = $_SESSION['login_user'];
                     $query = mysqli_query($conn, "SELECT * FROM users WHERE email = '$user_check'");
                     $rows = mysqli_fetch_array($query);
                     $status = $rows['admin'];
                     $id_user = $rows['id_user'];
-                    if($status ==1){
+                    if($status == 1){
                         // header("Location: ../account/admin.php");
-                        $admin = '<a href="../account/admin.php"><img src="../img/icon/user.svg" alt=""></a>';
+                        $admin = '<li><a href="../account/admin.php">Личный кабинет</a></li>';
                     }else{
-                        $admin = '<a href="account.php"><img src="../img/icon/user.svg" alt=""></a>';
+                        $admin = '<li><a href="account.php">Личный кабинет</a></li>';
                     }
                     
                     echo  $admin;
-                   
 
                 }  else{
-                  
-                       
-                  
-                    echo '<div id="myBtn"><img src="../img/icon/user.svg" alt=""></div>';
+                   
+                    echo '<li><a id="myBtn">Личный кабинет</a></li>';
                 }
-                   $sqlf = mysqli_query($conn, "SELECT SUM(count) as total_quantity
-                        FROM cart where id_users = '$id_user'
-                        GROUP BY id_products;");
-                        $rowsd2 = mysqli_fetch_assoc($sqlf);
-                        $nums = mysqli_num_rows($sqlf);
-                       echo'<div class="countsss">   
-                       <p>'.$nums.'</p>
-                       </div>
-                       ';?>
+                ?>
+                <!-- <li><a href="cart.php">Личный кабинет</a></li> -->
+            </ul>
+        </nav>
+        <div class="icon">
+       
             
-            <a href="../cart.php"><img src="../img/icon/cart.svg" alt=""></a>
-            <a href="exit.php">Выйти</a>
+           
         </div>
         
     </header> 
@@ -67,11 +58,22 @@
             <div class="modal">
                 <form action="php/login.php" method="POST">
                 <label for="email">Email</label><br>
-                <input type="text" required name="email"><br>
+                <input type="email" required  name="email"><br>
                 <label for="password">Пароль</label><br>
                 <input type="password" required name="password"><br>
+                <!-- <div style="height: 100px"
+                id="captcha-container"
+                class="smart-captcha" 
+                data-sitekey="ysc1_mFfff6eYybbeI24jjJMXshNhjavOWo0Yb2DyQyxo4d7e893a"
+                ></div> -->
+                <!-- <label for="password">Код</label><br>
+                <input type="password" required name="code"><br> -->
                 <button name="login">Войти</button><br><br>
                 <div class="register-auth" id="myBtn2"><p>Зарегистрироваться</p></div>
+
+                
+
+
                 </form>
             </div>
         </div>
@@ -91,6 +93,11 @@
                 <input type="text" required id="email" name="email"><br>
                 <label for="password">Пароль</label><br>
                 <input type="password" required id="password" name="password"><br><br>
+                <!-- <div style="height: 100px"
+                id="captcha-container"
+                class="smart-captcha" 
+                data-sitekey="ysc1_mFfff6eYybbeI24jjJMXshNhjavOWo0Yb2DyQyxo4d7e893a"
+                ></div> -->
                 <button name="registration">Зарегистрироваться</button>
                 </form>
             </div>

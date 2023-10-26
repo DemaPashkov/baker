@@ -14,22 +14,25 @@
            $rowsq = mysqli_fetch_array($querys);
            $id_user = $rowsq['id_user'];
 
-            
             $query = "SELECT * FROM cart where id_users = '$id_user'";
             $result = mysqli_query($conn, $query);
             $suppliers = mysqli_query($conn, "SELECT * FROM cart where id_users = '$id_user'");
+            
             for($data = []; $row = mysqli_fetch_assoc($result); $data [] = $row);
             foreach($data as $supplier) {
                 $prosuctts = mysqli_query($conn,"SELECT * FROM products where id_products = '$supplier[id_products]'");
                 $rows2 = mysqli_fetch_assoc($prosuctts);
                 $nums = mysqli_num_rows($suppliers);
+                $Image_products = mysqli_query($conn,"SELECT * FROM Image_product where id_product = '$supplier[id_products]'");
+                $Image_product = mysqli_fetch_assoc($Image_products);
+                $images = mysqli_query($conn,"SELECT * FROM images where id_images = '$Image_product[id_images]'");
+                $image = mysqli_fetch_assoc($images);
               
                 echo '<div class="head-product-content-block">
-                        <img src="img/products/'. $rows2['photo'].'" alt="">
+                      <img src="img/products/'. $image['name_image'] .'" alt="">
                         <h3>'.  $rows2['name_products'] .'</h3>
                         <p>'.  $supplier['price'] .' - руб</p>';
-                         echo "<a href='?del_id={$supplier['id_cart']}'>Удалить</a>
-                    </div>"; 
+                echo "<a href='?del_id={$supplier['id_cart']}'>Удалить</a></div>"; 
                 }
             if (!empty($_GET['del_id'])){
                 $supplier = mysqli_query($conn, "DELETE FROM cart WHERE id_cart= {$_GET['del_id']}");        

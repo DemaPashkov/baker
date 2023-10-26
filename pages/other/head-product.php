@@ -7,7 +7,7 @@
         <div class="head-product-content">
 
         <?php 
-        error_reporting(0);
+        // error_reporting(0);
         require_once('php/bd.php');
         if (isset($_SESSION['login_user'])) {
         $user_check = $_SESSION['login_user'];
@@ -24,20 +24,24 @@
             foreach($data as $supplier) {
                 $prosuctts = mysqli_query($conn,"SELECT * FROM employees where id_employees = '$supplier[id_employees]'");
                 $rows2 = mysqli_fetch_assoc($prosuctts);
+                $prosucts = mysqli_query($conn,"SELECT * FROM category where id_category = '$supplier[id_category]'");
+                $category = mysqli_fetch_assoc($prosucts);
+                $Image_products = mysqli_query($conn,"SELECT * FROM Image_product where id_product = '$supplier[id_products]'");
+                $Image_product = mysqli_fetch_assoc($Image_products);
+                $images = mysqli_query($conn,"SELECT * FROM images where id_images = '$Image_product[id_images]'");
+                $image = mysqli_fetch_assoc($images);
                 $id_products = $supplier['id_products'];
                 $name_products = $supplier['name_products'];
                 $price = $supplier['price'];
+                echo "<a href='tovar.php?tovar_id={$supplier['id_products']}'>";
                 echo '<div class="head-product-content-block">
-                <img src="img/products/'. $supplier['photo'] .'" alt="">
+                <img src="img/products/'. $image['name_image'] .'" alt="">
                 <h3>'.  $supplier['name_products'] .'</h3>
                 <p>'.  $supplier['price'] .' - руб</p>
-                ';
-                echo "<a href='?add_id={$supplier['id_products']}'>Добавить</a>
-                </div>"; 
+                </div></a>';
+               
             }
-            if (!empty($_GET['add_id'])){
-                $supplier = mysqli_query($conn, "INSERT INTO `cart` (`id_cart`, `id_users`, `id_products`,`price`, `count`) VALUES (NULL,'$id_user', '$_GET[add_id]', '$price', '1')");        
-            }   
+           
             ?>
                         
                

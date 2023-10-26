@@ -13,26 +13,24 @@
         </div>
         <nav>
             <ul>
-                <li><a href="../account/admin.php">Главная</a></li>
-                <li><a href="../account/sql.php">Sql Запросы</a></li>
-                <li><a href="../account/table.php">База данных</a></li>
+                <li><a href="../account/">Админка</a></li>
+                <li><a href="../account/sql.php">Sql</a></li>
+                <li><a href="../account/table.php">Таблицы</a></li>
             </ul>
         </nav>
         <div class="icon">
         <?php 
-        error_reporting(0);
         session_start();
-
                    if (isset($_SESSION['login_user'])) {
                     echo '<a href="../php/account.php"><img src="../img/icon/user.svg" alt=""></a>';
 
-                }else{
+                }  else{
                     echo '<div id="myBtn"><img src="../img/icon/user.svg" alt=""></div>';
                 }
                    ?>
-                   
             
-            <img src="../img/icon/cart.svg" alt="">
+           
+            <a href="exit.php">Выйти</a>
         </div>
         
     </header> 

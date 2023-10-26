@@ -13,9 +13,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="admin.php">Главная</a></li>
-                <li><a href="sql.php">Sql Запросы</a></li>
-                <li><a href="table.php">База данных</a></li>
+                <li><a href="admin.php">Админка</a></li>
+                <li><a href="sql.php">Sql</a></li>
+                <li><a href="table.php">Таблицы</a></li>
             </ul>
         </nav>
         <div class="icon">
@@ -29,7 +29,7 @@
                 }
                    ?>
             
-            <img src="../img/icon/cart.svg" alt="">
+           
             <a href="exit.php">Выйти</a>
         </div>
         
